@@ -1,0 +1,49 @@
+@use "../../styles/partials/mixins" as *;
+
+.skills {
+
+
+  @include flex-center;
+height: 100vh;
+
+&__box {
+  width: 33%;
+  border: .125rem solid black;
+  margin: 1rem;
+  border-radius: .75rem;
+
+  position: relative;
+  width: 400px; /* Adjust to your design */
+  height: 200px; /* Adjust to your design */
+  background: #f9f9f9; /* Optional: ensures content is visible */
+  padding: 20px;
+  border: 2px solid black; /* Optional: base border */
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 110px; /* Length of the beam */
+    height: 5px; /* Thickness of the beam */
+    background: linear-gradient(to right, transparent, white, transparent);
+    box-shadow: 0 20px 20px rgb(240, 50, 17); /* Glow effect */
+    offset-path: path(var(--beam-path, 'M175,-7 L100,0 Z')); /* Match div size */
+  offset-rotate:0deg;
+  // animation: move-along-path 10s linear infinite;
+  }
+}
+
+&__heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+}
+
+@keyframes move-along-path {
+  0% {
+    offset-distance: 0%;
+  }
+  100% {
+    offset-distance: 100%;
+  }
+}

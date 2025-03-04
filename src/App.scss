@@ -1,0 +1,32 @@
+// @use "./src/styles/partials/mixins.scss" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+body::after,
+body::before {
+  font-family: "Avenir Next", sans-serif;
+  padding: 1rem;
+
+  // max-width: $desktop-breakpoint;
+  // @include flex-column;
+  justify-content: center;
+  align-items: center;
+  // @include tablet-breakpoint {
+  //   padding: 1rem 2.25rem;
+  // }
+
+  // @include desktop-breakpoint {
+  //   padding: 1rem 3rem;
+  // }
+  overflow-x: hidden;
+}
+
+.app {
+}
