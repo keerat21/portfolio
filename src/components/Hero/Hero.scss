@@ -7,4 +7,10 @@
     // background-color: rgb(18, 22, 22);
     // position: inherit;
     z-index: 2;
+
+    &__text{
+        background-color: rgba(193, 104, 196, 0.808);
+        padding: 1rem;
+        border-radius: 0.5rem;
+    }
 }

@@ -1,49 +1,58 @@
 @use "../../styles/partials/mixins" as *;
 
 .skills {
-
-
   @include flex-center;
-height: 100vh;
+  height: 100vh;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #1e1e2f, #3a3a55);
 
-&__box {
-  width: 33%;
-  border: .125rem solid black;
-  margin: 1rem;
-  border-radius: .75rem;
 
-  position: relative;
-  width: 400px; /* Adjust to your design */
-  height: 200px; /* Adjust to your design */
-  background: #f9f9f9; /* Optional: ensures content is visible */
-  padding: 20px;
-  border: 2px solid black; /* Optional: base border */
+  &__box {
+    width: 320px;
+    height: 25rem;
+    border-radius: 12px;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
-  &::before {
-    content: '';
-    position: absolute;
-    width: 110px; /* Length of the beam */
-    height: 5px; /* Thickness of the beam */
-    background: linear-gradient(to right, transparent, white, transparent);
-    box-shadow: 0 20px 20px rgb(240, 50, 17); /* Glow effect */
-    offset-path: path(var(--beam-path, 'M175,-7 L100,0 Z')); /* Match div size */
-  offset-rotate:0deg;
-  // animation: move-along-path 10s linear infinite;
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
   }
-}
 
-&__heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-}
-
-@keyframes move-along-path {
-  0% {
-    offset-distance: 0%;
+  &__heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 1rem;
   }
-  100% {
-    offset-distance: 100%;
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  &__list-item {
+    font-size: 1.1rem;
+    color: #ddd;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    transition: background 0.08s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
   }
 }

@@ -63,13 +63,13 @@ class Noise {
 // Noise + Grad (unchanged) - Omitted for brevity
 
 export default function Waves({
-    lineColor = "purple",
+    lineColor = "light purple",
     backgroundColor = "transparent",
     waveSpeedX = 0.0125,
     waveSpeedY = 0.005,
     waveAmpX = 32,
     waveAmpY = 16,
-    xGap = 10,
+    xGap = 15,
     yGap = 32,
     friction = 0.925,
     tension = 0.005,

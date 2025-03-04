@@ -7,6 +7,7 @@ function Hero() {
 
 
             <ReactTyped
+                className="hero__text"
                 backSpeed={50}
                 onBegin={function noRefCheck() { }}
                 onComplete={function noRefCheck() { }}
@@ -22,7 +23,7 @@ function Hero() {
                     "Hey 👋",
                     "I'm Keerat :)",
                     "I'm a Full Stack Web Developer 💻",
-                    "I'm an Embedded Systems Programmer ⚙️",
+                    "I'm a Software engineer ⚙️",
                     "I'm a lifelong learner 📚",
                     "I love 💻",
                     "I love 🐱",
