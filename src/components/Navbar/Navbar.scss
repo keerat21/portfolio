@@ -70,6 +70,7 @@
 }
 
 .navbar__toggle .bar {
+  
   width: 30px;
   height: 3px;
   background-color: rgb(138, 61, 61);
@@ -92,6 +93,7 @@
 
 /* Mobile Menu */
 .navbar__links.active {
+  margin-top: 4rem;
   display: flex;
   flex-direction: column;
   position: fixed;
