@@ -76,7 +76,7 @@ export default function Waves({
     maxCursorMove = 100,
     style = {},
     className = "",
-    TOP_OFFSET = 70
+    TOP_OFFSET = 0
 }) {
     const containerRef = useRef(null);
     const canvasRef = useRef(null);

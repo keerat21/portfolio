@@ -22,7 +22,7 @@
   
   .glitch:not(.enable-on-hover)::after {
     left: 10px;
-    text-shadow: var(--after-shadow, -10px 0 red);
+    text-shadow: var(--after-shadow, -10px 0 rgb(156, 45, 147));
     animation: animate-glitch var(--after-duration, 3s) infinite linear alternate-reverse;
   }
   .glitch:not(.enable-on-hover)::before {
