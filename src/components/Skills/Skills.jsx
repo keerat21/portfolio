@@ -13,7 +13,7 @@ const Skills = () => {
           <li className="skills__list-item">SASS</li>
           <li className="skills__list-item">Responsive Design</li>
           <li className="skills__list-item">Javascript</li>
-          <li className="skills__list-item">Reqact/React Native</li>
+          <li className="skills__list-item">React/React Native</li>
         </ul>
       </div>
       <div className="skills__box">
@@ -37,7 +37,7 @@ const Skills = () => {
           <li className="skills__list-item">AWS</li>
           <li className="skills__list-item">Figma</li>
           <li className="skills__list-item">C++/C</li>
-          <li className="skills__list-item">Python for data analysis</li>
+          <li className="skills__list-item">Python for Data Analysis</li>
           <li className="skills__list-item">PowerBI</li>
 
         </ul>

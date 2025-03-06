@@ -6,8 +6,10 @@
   flex-wrap: wrap;
   gap: 2rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #494992, #000000);
+  padding-top: 0;
+  background: linear-gradient(135deg, #494992, #630f79);
   border-radius: 2rem;
+  margin-bottom: 6.25rem;
 
 
   &__box {

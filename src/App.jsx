@@ -16,23 +16,25 @@ const App = () => {
       <Waves />
       <Navbar />
       <Hero />
-      <h2 className="sub-topic" id="skills"><GlitchText
-        speed={1.7}
-        enableShadows={true}
-        enableOnHover={false}
-        className='custom-class'
-      >
-        Skills
-      </GlitchText></h2>
+      <h2 id="skills" className="sub-topic">
+        <GradientText
+          animationSpeed={3}
+          showBorder={false}
+          className="sub-topic"
+        >
+          Skills
+        </GradientText>
+      </h2>
       <Skills />
-      <h2 className="sub-topic" id="projects"><GlitchText
-        speed={1}
-        enableShadows={true}
-        enableOnHover={false}
-        className='custom-class'
-      >
-        Projects
-      </GlitchText></h2>
+      <h2 id="projects" className="sub-topic">
+        <GradientText
+          animationSpeed={3}
+          showBorder={false}
+          className="sub-topic"
+        >
+          Projects
+        </GradientText>
+      </h2>
       <Projects />
     </div>
   );

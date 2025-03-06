@@ -10,7 +10,7 @@
 
     /* 20px */
     font-weight: 500;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(7px);
     transition: box-shadow 0.5s ease-out;
     overflow: hidden;
     cursor: pointer;
@@ -58,6 +58,7 @@
       background-position: 0% 50%;
     }
   }
+ 
   
   .text-content {
     display: inline-block;

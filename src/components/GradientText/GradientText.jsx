@@ -3,9 +3,9 @@ import "./GradientText.scss";
 export default function GradientText({
     children,
     className = "",
-    colors = ["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"], // Default colors
-    animationSpeed = 8, // Default animation speed in seconds
-    showBorder = false, // Default overlay visibility
+    colors = ["#494992", "#000000", "#826e91", "#4B0082", "#826e91"], // Default colors
+    animationSpeed = 15, // Default animation speed in seconds
+    showBorder = true, // Default overlay visibility
 }) {
     const gradientStyle = {
         backgroundImage: `linear-gradient(to right, ${colors.join(", ")})`,
