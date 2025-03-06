@@ -1,3 +1,5 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/breakpoints" as *;
 .tilted-card-figure {
     position: relative;
     width: 100%;
@@ -54,6 +56,15 @@
     border-radius: .125rem;
     will-change: transform;
     transform: translateZ(30px);
+
+    @include tablet-breakpoint {
+      top: 110%;
+    }
+    @media screen and (max-width: 42.5rem) {
+      top: 95%;
+      
+    }
+  
   }
   
   .tilted-card-caption {

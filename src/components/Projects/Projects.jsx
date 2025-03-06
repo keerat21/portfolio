@@ -18,8 +18,6 @@ function Projects() {
             url: "https://regina-roads.vercel.app/"
         },
         {
-
-
             imgpath: coffee, altTxt: "Coffee Shop",
             cap: "Coffee Shop",
             url: 'https://keerat-tanwar-coffeeshop.vercel.app/'
@@ -57,10 +55,7 @@ function Projects() {
                         imageSrc={project["imgpath"]}
                         altText={project["altTxt"]}
                         captionText={project["cap"]}
-                        containerHeight="300px"
-                        containerWidth="400px"
-                        imageHeight="300px"
-                        imageWidth="400px"
+
                         rotateAmplitude={12}
                         scaleOnHover={1.2}
                         showMobileWarning={false}

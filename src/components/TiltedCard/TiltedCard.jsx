@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import "./TiltedCard.scss";
 
@@ -12,10 +12,6 @@ export default function TiltedCard({
     imageSrc,
     altText = "Tilted card image",
     captionText = "",
-    containerHeight = "300px",
-    containerWidth = "100%",
-    imageHeight = "300px",
-    imageWidth = "300px",
     scaleOnHover = 1.1,
     rotateAmplitude = 8,
     showMobileWarning = true,
@@ -25,7 +21,6 @@ export default function TiltedCard({
     urlClick
 }) {
     const ref = useRef(null);
-
     const x = useMotionValue();
     const y = useMotionValue();
     const rotateX = useSpring(useMotionValue(0), springValues);
@@ -39,6 +34,26 @@ export default function TiltedCard({
     });
 
     const [lastY, setLastY] = useState(0);
+    const [dimensions, setDimensions] = useState({
+        width: 400,
+        height: 300
+    });
+
+    useEffect(() => {
+        function updateDimensions() {
+            let newWidth;
+            if (window.innerWidth < 876 && window.innerWidth > 680)
+                newWidth = Math.min(window.innerWidth * 0.8, 300);
+            else
+                newWidth = Math.min(window.innerWidth * 0.8, 400);
+            const newHeight = (newWidth / 4) * 3; // Maintain 4:3 aspect ratio
+            setDimensions({ width: newWidth, height: newHeight });
+        }
+
+        updateDimensions();
+        window.addEventListener("resize", updateDimensions);
+        return () => window.removeEventListener("resize", updateDimensions);
+    }, []);
 
     function handleMouse(e) {
         if (!ref.current) return;
@@ -73,8 +88,9 @@ export default function TiltedCard({
         rotateY.set(0);
         rotateFigcaption.set(0);
     }
+
     const handleClick = (url) => {
-        window.location.href = url; // Redirects to the URL
+        window.location.href = url;
     };
 
     return (
@@ -82,8 +98,8 @@ export default function TiltedCard({
             ref={ref}
             className="tilted-card-figure"
             style={{
-                height: containerHeight,
-                width: containerWidth,
+                height: dimensions.height,
+                width: dimensions.width,
             }}
             onMouseMove={handleMouse}
             onMouseEnter={handleMouseEnter}
@@ -99,8 +115,8 @@ export default function TiltedCard({
             <motion.div
                 className="tilted-card-inner"
                 style={{
-                    width: imageWidth,
-                    height: imageHeight,
+                    width: dimensions.width,
+                    height: dimensions.height,
                     rotateX,
                     rotateY,
                     scale,
@@ -111,15 +127,13 @@ export default function TiltedCard({
                     alt={altText}
                     className="tilted-card-img"
                     style={{
-                        width: imageWidth,
-                        height: imageHeight,
+                        width: dimensions.width,
+                        height: dimensions.height,
                     }}
                 />
 
                 {displayOverlayContent && overlayContent && (
-                    <motion.div
-                        className="tilted-card-overlay"
-                    >
+                    <motion.div className="tilted-card-overlay">
                         {overlayContent}
                     </motion.div>
                 )}
